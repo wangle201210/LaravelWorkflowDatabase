@@ -1,0 +1,30 @@
+{
+    "name": "wanna/laravel-workflow-database",
+    "description": "laravel workflow with database and role",
+    "type": "library",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wanna",
+            "email": "285273592@qq.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Wanna\\LaravelWorkflowDatabase\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Wanna\\LaravelWorkflowDatabase\\Providers\\WorkflowProvider"
+          ]
+        }
+    }
+}
