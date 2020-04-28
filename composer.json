@@ -32,5 +32,11 @@
             "Wanna\\LaravelWorkflowDatabase\\Providers\\WorkflowProvider"
           ]
         }
+    },
+    "repositories": {
+        "config": {
+            "type": "vcs",
+            "url": "https://github.com/wangle201210/laravel-config-writer.git"
+        },
     }
 }
