@@ -15,8 +15,7 @@
         "laravel/framework": "^6.0",
         "brexis/laravel-workflow": "^1.3",
         "spatie/laravel-permission": "^3.0",
-        "osi/laravel-controller-trait": "dev-master",
-        "infinety-es/config": "^1.2"
+        "osi/laravel-controller-trait": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -31,12 +30,6 @@
           "providers": [
             "Wanna\\LaravelWorkflowDatabase\\Providers\\WorkflowProvider"
           ]
-        }
-    },
-    "repositories": {
-        "config": {
-            "type": "vcs",
-            "url": "https://github.com/wangle201210/laravel-config-writer.git"
         }
     }
 }
