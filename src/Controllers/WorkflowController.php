@@ -46,13 +46,14 @@ class WorkflowController extends Controller
     public function workflow(Request $request)
     {
         $res = $this->assemble($request['id']);
+        return $this->dataSuccess($res);
     }
 
     public function assemble($id)
     {
         $data = $this->model::with(['place', 'action' => function ($q) {
             return $q->with(['from', 'to']);
-        }])->find($id);
+        }])->findOrFail($id);
         $workflow = [
             'supports'      => [$data['supports']],
             'type'          => $data['type'],
@@ -68,9 +69,12 @@ class WorkflowController extends Controller
                 'to'   => $action['to']['title'],
             ];
         }
-        config(['workflow' => [$data['title'] => $workflow]]);
-        // $this->test();
-        return $this->accepted();
+        $workflow['options'] = [
+            'node' => ['fontname' => 'SimHei'],
+        ];
+        config(['workflow.'.$data['title'] => $workflow]);
+        configSave('workflow');
+        return $workflow;
     }
 
     public function test()

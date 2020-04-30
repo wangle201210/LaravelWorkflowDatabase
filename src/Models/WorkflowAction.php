@@ -19,4 +19,9 @@ class WorkflowAction extends Model
     {
         return $this->belongsTo("Wanna\LaravelWorkflowDatabase\Models\WorkflowPlace");
     }
+
+    public function role()
+    {
+        return $this->belongsToMany('Wanna\LaravelWorkflowDatabase\Models\Role','action_roles','action_id','role_id');
+    }
 }
